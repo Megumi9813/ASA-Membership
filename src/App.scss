@@ -1,0 +1,400 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif !important;
+  background-color: #fff;
+  color: #313f55 !important;
+}
+
+a {
+  text-decoration: none;
+  color: #313f55;
+}
+
+.flex {
+  display: flex;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.btn {
+  align-items: center;
+  border-radius: 4px !important;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  justify-content: center;
+  letter-spacing: 0.03em;
+  line-height: 1;
+  outline: 0;
+  height: 40px;
+  font-weight: 300 !important;
+}
+
+.authentication {
+  display: none;
+}
+
+.dashboard_nav {
+  border-bottom: 2px solid hsla(0, 0%, 52.2%, 0.1);
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+  top: 0;
+  background-color: #fff;
+  .dashboard_nav-content {
+    height: 60px;
+    min-height: 60px;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 12px;
+    display: flex;
+    align-items: center;
+    .flex {
+      .btn-burger {
+        border: none;
+        background-color: #fff;
+        padding: 12px;
+        color: #c49275;
+        .logo-burger {
+          width: 30px;
+          max-height: 20px;
+          height: 20px;
+        }
+        .burger-close {
+          display: none;
+        }
+      }
+      .logo {
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        margin: 0;
+        img {
+          width: 100%;
+          max-width: 240px;
+          max-height: 56px;
+        }
+      }
+    }
+    .nav_links {
+      display: flex;
+      padding: 0 18px;
+      height: 40px;
+      align-items: center;
+      .loggedVer-container {
+        .avator {
+          background-color: #c49275;
+          cursor: pointer;
+        }
+        .account-wrapper {
+          display: none;
+          background-color: #fff;
+          list-style: none;
+          position: absolute;
+          top: 60px;
+          min-width: 150px;
+          border-radius: 4px;
+          border: 1px solid #ebeef5;
+          padding: 12px;
+          right: 8px;
+          font-size: 16px;
+          font-weight: 300;
+          .accout-item {
+            padding: 8px 12px;
+            cursor: pointer;
+            svg {
+              color: #909399;
+              margin-right: 8px;
+            }
+            sapn {
+              color: #313f55;
+            }
+          }
+        }
+      }
+      .btn {
+        padding: 0 16px;
+      }
+      .btn_secondary {
+        background-color: #fff;
+        border: none;
+        display: none;
+        margin-right: 16px;
+        color: inherit;
+        box-shadow: 0 1px 6px rgba(0, 0, 0, 10%);
+        a {
+          color: #c49275;
+        }
+      }
+      .btn_primary {
+        background-color: #c49275;
+        border: none;
+        a {
+          color: #fff !important;
+        }
+      }
+    }
+  }
+}
+
+.openAccount {
+  display: block !important;
+}
+
+.sideBar-open .burger-close {
+  display: block !important;
+}
+
+.sideBar-open .burger-open {
+  display: none;
+}
+
+.course_main {
+  display: flex;
+  width: 100vw;
+  margin-left: 0px;
+  transition: all 0.45s;
+  padding-top: 58px;
+  .sidebar_wrapper {
+    position: fixed;
+    height: 100%;
+    left: 0;
+    top: 0;
+    padding-top: 58px;
+    z-index: 999;
+    background-color: #fff;
+    overflow: hidden;
+    transition: all 0.3s;
+    .sidebar {
+      position: sticky;
+      top: 0;
+      padding-top: 16px;
+      ul {
+        width: 0;
+        font-size: 16px;
+        list-style: none;
+        padding: 0;
+        .aside {
+          font-weight: 300;
+          transform: translateX(-100%);
+          transition: transform 0.45s;
+          li {
+            height: 56px;
+            padding: 0 20px;
+            line-height: 56px;
+            div {
+              vertical-align: middle;
+            }
+            .sidebar-icon {
+              padding: 0 3px;
+              margin-right: 5px;
+              color: #909399;
+            }
+          }
+          .submenu {
+            position: relative;
+            cursor: pointer;
+            .submenu_title {
+              .submenu-icon {
+                position: absolute;
+                top: 50%;
+                right: 20px;
+                margin-top: -7px;
+                color: #909399;
+              }
+              .submenu-up {
+                display: none;
+              }
+            }
+            .submenu-option {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+  .course_wrapper {
+    width: 100%;
+    .theater {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      .video-player {
+        padding: 8px 4px 4px 4px;
+        .video-player_wrapper {
+          .video_wrapper {
+            padding-bottom: 56.25%;
+            position: relative;
+            iframe {
+              width: 100%;
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+            }
+          }
+        }
+      }
+      .container {
+        padding-top: 28px;
+      }
+    }
+    .row {
+      a {
+        text-decoration: underline;
+        color: #0e1318b3;
+        font-size: 14px;
+      }
+      .auth-wrapper {
+        max-width: 384px;
+        margin: 0 auto;
+        padding-top: 64px;
+        h1 {
+          padding: 16px 0;
+        }
+        h2 {
+          text-align: center;
+          margin-bottom: 24px;
+        }
+        h3 {
+          padding-bottom: 24px;
+        }
+        form {
+          .form-group {
+            .form-item {
+              display: flex;
+              flex-direction: column;
+              margin-bottom: 16px;
+              input {
+                height: 40px;
+                border-radius: 4px;
+                border: 1px solid #dcdfe6;
+              }
+            }
+            margin-bottom: 24px;
+            display: flex;
+            flex-direction: column;
+          }
+          button {
+            cursor: pointer;
+            border: none;
+            background-color: #c49275;
+            border-radius: 4px;
+            color: #fff;
+            font-weight: 300;
+            height: 40px;
+            margin-bottom: 16px;
+            width: 100%;
+          }
+        }
+        .authLink {
+          a {
+            text-decoration: underline;
+            color: #c49275;
+          }
+        }
+      }
+    }
+  }
+}
+
+.open {
+  display: block !important;
+}
+
+.close {
+  display: none;
+}
+
+.sideBar-open .course_main {
+  .sidebar_wrapper {
+    border-right: 2px solid rgba(133, 133, 133, 0.1);
+    .sidebar {
+      ul {
+        width: 200px;
+        .aside {
+          transform: translate(0px);
+        }
+      }
+    }
+  }
+}
+
+.home {
+  .bgImg-wrapper {
+    position: relative;
+    h1 {
+      font-size: 32px;
+      z-index: 999;
+      color: #fff;
+      position: absolute;
+      right: 8%;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    figure {
+      background-color: #c49275;
+      margin: 0 !important;
+      img {
+        width: 100%;
+        opacity: 0.8;
+      }
+    }
+  }
+  .row {
+    .course-wrapper {
+      .course-list {
+        list-style: none;
+      }
+    }
+  }
+}
+
+@media (min-width: 576px) {
+  .dashboard_nav {
+    .dashboard_nav-content {
+      padding: 0 16px;
+      .flex {
+        .logo {
+          margin-left: 20px;
+        }
+      }
+      .nav_links {
+        padding: 0 14px;
+        .btn_secondary {
+          display: block;
+        }
+        .btn_primary {
+          background-color: #c49275;
+          border: none;
+          a {
+            color: #fff !important;
+          }
+        }
+      }
+    }
+  }
+  .course_main {
+    .course_wrapper {
+      .home {
+        .bgImg-wrapper {
+          h1 {
+            right: 12%;
+            font-size: 40px;
+          }
+        }
+      }
+    }
+  }
+}
