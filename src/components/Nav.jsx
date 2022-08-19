@@ -14,7 +14,6 @@ export const closeSidebar = () =>  {
 
 function Nav() {
     const { user, logoutUser } = useUserContext();
-    // console.log(user.email)
 
     const [open, setOpen] = useState(false)
 

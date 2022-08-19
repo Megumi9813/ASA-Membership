@@ -11,9 +11,9 @@ import Theater from './components/Theater'
 
 function App() {
   const [courses, setCourses] = useState([]);
-  const coursesCollectionRef = collection(db, "courses");
 
   useEffect(() => {
+    const coursesCollectionRef = collection(db, "courses");
     const getCourses = async () => {
       const coursesData = await getDocs(coursesCollectionRef);
       setCourses(coursesData.docs.map((doc) => ({...doc.data(), id: doc.id })))

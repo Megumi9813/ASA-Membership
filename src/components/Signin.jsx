@@ -37,7 +37,7 @@ const Signin = () => {
                   <input type="password" ref={psdRef} />
                 </div>
                 <button type="submit">Sign In</button>
-                <a onClick={forgotPasswordHandler}>Forgot Password?</a>
+                <a href="" onClick={forgotPasswordHandler}>Forgot Password?</a>
               </div>
             </form>
           </div>
