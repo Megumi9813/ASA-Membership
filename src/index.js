@@ -12,7 +12,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <UserContectProvider>
-      <Router basename='/asa-membership/'>
+      <Router>
         <App />
       </Router>
     </UserContectProvider>
