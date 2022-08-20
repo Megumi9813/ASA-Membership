@@ -1,4 +1,4 @@
 [[redirects]]  
-  from = "/*"  
+  from = "/asa-membership/*"  
   to = "/index.html"  
   status = 200
