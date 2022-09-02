@@ -38,108 +38,108 @@ a {
   height: 40px;
   font-weight: 300 !important;
 }
-
-.authentication {
-  display: none;
-}
-
-.dashboard_nav {
-  border-bottom: 2px solid hsla(0, 0%, 52.2%, 0.1);
-  position: fixed;
-  width: 100%;
-  z-index: 9999;
-  top: 0;
-  background-color: #fff;
-  .dashboard_nav-content {
-    height: 60px;
-    min-height: 60px;
+.nav_container {
+  .dashboard_nav {
+    border-bottom: 2px solid hsla(0, 0%, 52.2%, 0.1);
+    position: fixed;
     width: 100%;
-    justify-content: space-between;
-    padding: 0 12px;
-    display: flex;
-    align-items: center;
-    .flex {
-      .btn-burger {
-        border: none;
-        background-color: #fff;
-        padding: 12px;
-        color: #c49275;
-        .logo-burger {
-          width: 30px;
-          max-height: 20px;
-          height: 20px;
-        }
-        .burger-close {
-          display: none;
-        }
-      }
-      .logo {
-        justify-content: center;
-        display: flex;
-        align-items: center;
-        margin: 0;
-        img {
-          width: 100%;
-          max-width: 240px;
-          max-height: 56px;
-        }
-      }
-    }
-    .nav_links {
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    .dashboard_nav-content {
+      height: 60px;
+      min-height: 60px;
+      width: 100%;
+      margin: 0 auto;
+      justify-content: space-between;
+      padding: 0 15px;
       display: flex;
-      padding: 0 18px;
-      height: 40px;
       align-items: center;
-      .loggedVer-container {
-        .avator {
-          background-color: #c49275;
-          cursor: pointer;
-        }
-        .account-wrapper {
-          display: none;
+      max-width: 540px;
+      .flex {
+        .btn-burger {
+          border: none;
           background-color: #fff;
-          list-style: none;
-          position: absolute;
-          top: 60px;
-          min-width: 150px;
-          border-radius: 4px;
-          border: 1px solid #ebeef5;
-          padding: 12px;
-          right: 8px;
-          font-size: 16px;
-          font-weight: 300;
-          .accout-item {
-            padding: 8px 12px;
-            cursor: pointer;
-            svg {
-              color: #909399;
-              margin-right: 8px;
-            }
-            sapn {
-              color: #313f55;
-            }
+          padding: 12px 12px 12px 0;
+          color: #c49275;
+          .logo-burger {
+            width: 30px;
+            max-height: 20px;
+            height: 20px;
+          }
+          .burger-close {
+            display: none;
+          }
+        }
+        .logo {
+          justify-content: center;
+          display: flex;
+          align-items: center;
+          margin: 0;
+          img {
+            width: 100%;
+            max-width: 240px;
+            max-height: 56px;
           }
         }
       }
-      .btn {
-        padding: 0 16px;
-      }
-      .btn_secondary {
-        background-color: #fff;
-        border: none;
-        display: none;
-        margin-right: 16px;
-        color: inherit;
-        box-shadow: 0 1px 6px rgba(0, 0, 0, 10%);
-        a {
-          color: #c49275;
+      .nav_links {
+        display: flex;
+        height: 40px;
+        align-items: center;
+        .authentication {
+          display: flex;
+          .btn {
+            padding: 0 16px;
+          }
+          .btn_secondary {
+            background-color: #fff;
+            border: none;
+            display: none;
+            margin-right: 16px;
+            color: inherit;
+            box-shadow: 0 1px 6px rgba(0, 0, 0, 10%);
+            a {
+              color: #c49275;
+            }
+          }
+          .btn_primary {
+            background-color: #c49275;
+            border: none;
+            color: #fff !important;
+          }
         }
-      }
-      .btn_primary {
-        background-color: #c49275;
-        border: none;
-        a {
-          color: #fff !important;
+        .loggedVer-container {
+          .avator {
+            background-color: #c49275;
+            cursor: pointer;
+          }
+          .account-wrapper {
+            display: none;
+            background-color: #fff;
+            list-style: none;
+            position: absolute;
+            top: 60px;
+            min-width: 150px;
+            border-radius: 4px;
+            border: 1px solid #ebeef5;
+            padding: 12px;
+            right: 8px;
+            font-size: 16px;
+            font-weight: 300;
+            .accout-item {
+              padding: 8px 12px;
+              cursor: pointer;
+              svg {
+                color: #909399;
+                margin-right: 8px;
+              }
+              sapn {
+                color: #313f55;
+              }
+            }
+          }
         }
       }
     }
@@ -250,60 +250,102 @@ a {
         padding-top: 28px;
       }
     }
-    .row {
-      a {
-        text-decoration: underline;
-        color: #0e1318b3;
-        font-size: 14px;
+  }
+}
+
+.signIn,
+.signUp {
+  .signIn_background,
+  .signUp_background {
+    z-index: 2000;
+    display: none;
+    background-color: #333;
+    opacity: 0.8;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  .auth-wrapper {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 2001;
+    display: none;
+    h1 {
+      padding: 16px 0;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    h3 {
+      padding-bottom: 24px;
+    }
+    .form {
+      border-radius: 8px;
+      width: 400px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      position: relative;
+      background: #fff;
+      .form_header {
+        button {
+          background-color: rgba(14, 19, 24, 0.7);
+          border: none;
+          border-radius: 50%;
+          color: #fff;
+          cursor: pointer;
+          font-size: 16px;
+          height: 40px;
+          padding: 8px;
+          position: absolute;
+          right: 20px;
+          top: 20px;
+          width: 40px;
+        }
       }
-      .auth-wrapper {
-        max-width: 384px;
-        margin: 0 auto;
-        padding-top: 64px;
-        h1 {
-          padding: 16px 0;
-        }
-        h2 {
-          text-align: center;
-          margin-bottom: 24px;
-        }
-        h3 {
-          padding-bottom: 24px;
-        }
-        form {
-          .form-group {
-            .form-item {
-              display: flex;
-              flex-direction: column;
-              margin-bottom: 16px;
-              input {
-                height: 40px;
-                border-radius: 4px;
-                border: 1px solid #dcdfe6;
-              }
-            }
-            margin-bottom: 24px;
+      .form_body {
+        padding: 70px 24px 35px 24px;
+        .form-group {
+          .form-item {
             display: flex;
             flex-direction: column;
-          }
-          button {
-            cursor: pointer;
-            border: none;
-            background-color: #c49275;
-            border-radius: 4px;
-            color: #fff;
-            font-weight: 300;
-            height: 40px;
             margin-bottom: 16px;
-            width: 100%;
+            input {
+              height: 40px;
+              border-radius: 4px;
+              border: 1px solid #dcdfe6;
+            }
           }
-        }
-        .authLink {
           a {
             text-decoration: underline;
-            color: #c49275;
           }
+          margin-bottom: 24px;
+          display: flex;
+          flex-direction: column;
         }
+        button {
+          cursor: pointer;
+          border: none;
+          background-color: #c49275;
+          border-radius: 4px;
+          color: #fff;
+          font-weight: 300;
+          height: 40px;
+          margin-bottom: 16px;
+          width: 100%;
+        }
+      }
+    }
+    .authLink {
+      a {
+        text-decoration: underline;
+        color: #c49275;
       }
     }
   }
@@ -334,6 +376,7 @@ a {
 .home {
   .bgImg-wrapper {
     position: relative;
+    margin-bottom: 42px;
     h1 {
       font-size: 32px;
       z-index: 999;
@@ -347,39 +390,96 @@ a {
       background-color: #c49275;
       margin: 0 !important;
       img {
+        vertical-align: middle;
         width: 100%;
-        opacity: 0.8;
+        opacity: 0.9;
       }
     }
   }
-  .row {
-    .course-wrapper {
-      .course-list {
-        list-style: none;
+  .courseList {
+    .row {
+      width: 100%;
+      .course-wrapper {
+        .card-list {
+          list-style: none;
+          .courseItem {
+            margin-bottom: 30px;
+            padding: 0 15px;
+            .card-item {
+              border: 1px solid #f1f1f1;
+              border-radius: 7px;
+              .course-item_img {
+                background-color: #c49275;
+                border-radius: 7px 7px 0 0;
+                img {
+                  width: 100%;
+                  max-height: 260px;
+                  padding: 10%;
+
+                }
+              }
+              .course-item_description {
+                border: 7px 7px 0 0;
+                .course-item_up {
+                  padding: 20px;
+                  .course-item_teahcer {
+                    margin-bottom: 16px;
+                    display: flex;
+                    align-items: center;
+                    .teacher_img {
+                      img {
+                        border-radius: 50%;
+                        height: 30px;
+                        width: 30px;
+                      }
+                    }
+                    .teacher_name {
+                      margin-left: 8px;
+                    }
+                  }
+                }
+                .course-item_condition {
+                  border-top: 1px solid #f1f1f1;
+                  display: flex;
+                  padding: 20px;
+                  justify-content: space-between;
+                  .numberOfHours {
+                    svg {
+                      margin-right: 8px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
 }
 
 @media (min-width: 576px) {
-  .dashboard_nav {
-    .dashboard_nav-content {
-      padding: 0 16px;
-      .flex {
-        .logo {
-          margin-left: 20px;
+  .nav_container {
+    .dashboard_nav {
+      .dashboard_nav-content {
+        padding: 0 16px;
+        .flex {
+          .logo {
+            margin-left: 20px;
+          }
         }
-      }
-      .nav_links {
-        padding: 0 14px;
-        .btn_secondary {
-          display: block;
-        }
-        .btn_primary {
-          background-color: #c49275;
-          border: none;
-          a {
-            color: #fff !important;
+        .nav_links {
+          padding: 0 0 0 14px;
+          .authentication {
+            display: flex;
+            .btn_secondary {
+              display: block;
+            }
+            .btn_primary {
+              background-color: #c49275;
+              border: none;
+              color: #fff !important;
+            }
           }
         }
       }
@@ -392,6 +492,77 @@ a {
           h1 {
             right: 12%;
             font-size: 40px;
+          }
+        }
+        .courseList {
+          max-width: 540px;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .nav_container {
+    .dashboard_nav {
+      .dashboard_nav-content {
+        max-width: 720px;
+      }
+    }
+  }
+  .course_main {
+    .course_wrapper {
+      .home {
+        .courseList {
+          max-width: 720px;
+          .row {
+            .course-wrapper {
+              .card-list {
+                display: flex;
+                flex-wrap: wrap;
+                .courseItem {
+                  width: 50%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .nav_container {
+    .dashboard_nav {
+      .dashboard_nav-content {
+        max-width: 960px;
+      }
+    }
+  }
+  .course_main {
+    .course_wrapper {
+      .home {
+        .courseList {
+          max-width: 960px;
+          .row {
+            .course-wrapper {
+              .card-list {
+                display: flex;
+                flex-wrap: wrap;
+                .courseItem {
+                  width: calc(100%/3);
+                  .card-item {
+                    .course-item_img {
+                      img {
+                        max-height: 230px;
+                      }
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       }

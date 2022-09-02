@@ -1,24 +1,19 @@
 import React from 'react'
 import MembershipHome from '../assets/MembershipHome.jpg'
+import CourseList from "../components/CourseList";
 
-function Home() {
+function Home({ courses }) {
   return (
     <div className="home">
-        <div className="bgImg-wrapper">
-            <h1>Courses</h1>
-            <figure>
-                <img src={MembershipHome} alt="" />
-            </figure>
-        </div>
-        <div className="row">
-            <div className="course-wrapper">
-                <ul className="course-list">
-                    <li className="course-item"></li>
-                </ul>
-            </div>
-        </div>
+      <div className="bgImg-wrapper">
+        <h1>Self Study Package</h1>
+        <figure>
+          <img src={MembershipHome} alt="" />
+        </figure>
+      </div>
+      <CourseList courses={courses} />
     </div>
-  )
+  );
 }
 
 export default Home

@@ -1,7 +1,8 @@
 import React, { useRef } from "react";
 import { useUserContext } from "../contexts/userContext";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-const Signup = () => {
+const Signup = ({signUpOpen, setSignUpOpen}) => {
   const emailRef = useRef();
   const nameRef = useRef();
   const psdRef = useRef();
@@ -16,9 +17,16 @@ const Signup = () => {
   };
 
   return (
-    <div className="row">
-      <div className="auth-wrapper">
-          <div className="form">
+    <div className="signUp">
+      <div className={signUpOpen ? "signUp_background open" : "signUp_background"}></div>
+      <div className={signUpOpen ? "auth-wrapper open" : "auth-wrapper"}>
+        <div className="form">
+          <div className="form_header">
+            <button onClick={() => setSignUpOpen(false)}>
+              <FontAwesomeIcon icon="fa-xmark" />
+            </button>
+          </div>
+          <div className="form_body">
             <h2> Create your account </h2>
             <form onSubmit={onSubmit}>
               <div className="form-group">
@@ -38,8 +46,10 @@ const Signup = () => {
               </div>
             </form>
           </div>
+        </div>
       </div>
-  </div>
+    </div>
+          
   );
 };
 

@@ -4,9 +4,9 @@ import App from './App';
 import {BrowserRouter as Router}from "react-router-dom";
 import { UserContectProvider } from './contexts/userContext'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faBars, faHouse, faList, faBarsStaggered, faEarthAmericas, faAngleDown, faAngleUp, faUser, faRightFromBracket } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faHouse, faList, faBarsStaggered, faEarthAmericas, faAngleDown, faAngleUp, faUser, faRightFromBracket, faXmark, faFolderOpen } from '@fortawesome/free-solid-svg-icons'
 
-library.add(faBars, faHouse, faList, faBarsStaggered, faEarthAmericas, faAngleDown, faAngleUp, faUser, faRightFromBracket)
+library.add(faBars, faHouse, faList, faBarsStaggered, faEarthAmericas, faAngleDown, faAngleUp, faUser, faRightFromBracket, faXmark, faFolderOpen)
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
