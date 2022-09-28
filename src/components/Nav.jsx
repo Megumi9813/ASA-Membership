@@ -1,21 +1,24 @@
-import React, { useState } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import AsaLogo from '../assets/AsaLogo.png'
-import { Link } from 'react-router-dom'
-import Avatar from '@mui/material/Avatar';
+import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import AsaLogo from "../assets/AsaLogo.png";
+import { Link } from "react-router-dom";
+import Avatar from "@mui/material/Avatar";
 import { useUserContext } from "../contexts/userContext";
 
 function openSidebar() {
-    document.body.classList += " sideBar-open";
+  document.body.classList += " sideBar-open";
 }
-export const closeSidebar = () =>  {
-    document.body.classList.remove("sideBar-open");
-}
+export const closeSidebar = () => {
+  document.body.classList.remove("sideBar-open");
+};
 
-function Nav({signInOpen, setSignInOpen, signUpOpen, setSignUpOpen}) {
-    const { user, logoutUser } = useUserContext();
-
-    const [open, setOpen] = useState(false)
+function Nav() {
+  const {
+    user,
+    logoutUser,
+    setAuthCondition,
+  } = useUserContext();
+  const [open, setOpen] = useState(false);
 
   return (
     <div className="nav_container">
@@ -41,29 +44,42 @@ function Nav({signInOpen, setSignInOpen, signUpOpen, setSignUpOpen}) {
             </Link>
           </div>
           <div className="nav_links">
-            {user === null ? (
+            {user === null && (
               <div className="authentication">
                 <button
                   className="btn btn_secondary"
-                  onClick={() => setSignInOpen(!signInOpen)}
+                  onClick={() =>
+                    setAuthCondition((prevState) => ({
+                      ...prevState,
+                      signIn: true,
+                    }))
+                  }
                 >
                   Login
                 </button>
                 <button
                   className="btn btn_primary"
-                  onClick={() => setSignUpOpen(!signUpOpen)}
+                  onClick={() =>
+                    setAuthCondition((prevState) => ({
+                      ...prevState,
+                      signUp: true,
+                    }))
+                  }
                 >
                   Register
                 </button>
               </div>
-            ) : (
+            )}
+            {user && (
               <div className="loggedVer-container">
                 <Avatar
                   sx={{ width: 40, height: 40 }}
                   className="avator"
                   onClick={() => setOpen(!open)}
                 >
-                  {user.displayName[0].toUpperCase()}
+                  {user &&
+                    user.displayName &&
+                    user?.displayName[0]?.toUpperCase()}
                 </Avatar>
                 <ul
                   className={
@@ -92,5 +108,4 @@ function Nav({signInOpen, setSignInOpen, signUpOpen, setSignUpOpen}) {
   );
 }
 
-export default Nav
-
+export default Nav;

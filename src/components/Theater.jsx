@@ -2,7 +2,6 @@ import React from 'react'
 import Iframe from 'react-iframe'
 import { useLocation } from 'react-router-dom';
 
-
 function Theater({courses}) {
     const location = useLocation();
 

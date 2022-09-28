@@ -5,7 +5,6 @@ function CourseItem({ course }) {
   return (
     <div className="courseItem">
       <li className="card-item" key={course.id}>
-        {console.log(course.id)}
         <figure className="course-item_img">
           <img src={course.bgImg} alt="" />
         </figure>
@@ -22,7 +21,7 @@ function CourseItem({ course }) {
           <div className="course-item_condition">
             <div className="numberOfHours">
               <FontAwesomeIcon icon="fa-folder-open" />
-              {course.NumberOfClass} classes
+              {course.NumberOfClass} questions
             </div>
             <div className="price">Price: ${course.price}.00</div>
           </div>

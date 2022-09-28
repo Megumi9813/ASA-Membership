@@ -53,10 +53,10 @@ a {
       width: 100%;
       margin: 0 auto;
       justify-content: space-between;
-      padding: 0 15px;
+      padding: 0 16px;
       display: flex;
       align-items: center;
-      max-width: 540px;
+      // max-width: 540px;
       .flex {
         .btn-burger {
           border: none;
@@ -80,7 +80,7 @@ a {
           img {
             width: 100%;
             max-width: 240px;
-            max-height: 56px;
+            max-height: 48px;
           }
         }
       }
@@ -254,9 +254,11 @@ a {
 }
 
 .signIn,
-.signUp {
+.signUp,
+.forgotPW {
   .signIn_background,
-  .signUp_background {
+  .signUp_background,
+  .forgotPW_background {
     z-index: 2000;
     display: none;
     background-color: #333;
@@ -294,6 +296,14 @@ a {
       position: relative;
       background: #fff;
       .form_header {
+        .backToSignIn {
+          position: absolute;
+          left: 20px;
+          top: 20px;
+          width: 40px;
+          background-color: transparent;
+          color: rgba(14, 19, 24, 0.7);
+        }
         button {
           background-color: rgba(14, 19, 24, 0.7);
           border: none;
@@ -310,17 +320,48 @@ a {
         }
       }
       .form_body {
-        padding: 70px 24px 35px 24px;
+        padding: 32px 24px;
+        height: 480px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         .form-group {
           .form-item {
             display: flex;
             flex-direction: column;
             margin-bottom: 16px;
+            label {
+              color: #606266;
+              font-weight: 500;
+              margin-bottom: 4px;
+            }
+            input::placeholder {
+              color: #c0c4cc;
+            }
             input {
+              padding: 0 16px;
               height: 40px;
               border-radius: 4px;
               border: 1px solid #dcdfe6;
             }
+            .password {
+              font-size: 8px;
+            }
+          }
+          .auth_switch {
+            margin-bottom: 8px;
+            color: #606266;
+            font-size: 14px;
+            span {
+              text-decoration: underline;
+              padding-left: 8px;
+              cursor: pointer;
+              color: #c49275;
+            }
+          }
+          .authToForgotPW {
+            text-decoration: underline;
+            cursor: pointer;
           }
           a {
             text-decoration: underline;
@@ -349,6 +390,20 @@ a {
       }
     }
   }
+}
+
+.forgotPW_sub {
+  font-size: 14px;
+  color: #606266;
+  margin-bottom: 24px;
+}
+.forgotPW_comments{
+  margin-bottom: 24px;
+  background-color: #d6ffd8;
+  color: #242424;
+  padding: 12px;
+  font-size: 12px;
+  border-radius: 4px;
 }
 
 .open {
@@ -415,7 +470,6 @@ a {
                   width: 100%;
                   max-height: 260px;
                   padding: 10%;
-
                 }
               }
               .course-item_description {
@@ -458,6 +512,97 @@ a {
   }
 }
 
+.classRoom_container {
+  border: 2px solid #8585851a;
+  margin: 24px;
+  .classRoom_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #8585851a;
+    padding: 8px 16px;
+    background-color: #fafaf9;
+    h2 {
+      font-size: 20px;
+    }
+  }
+  .classRoom_body {
+    display: flex;
+    .question_intro {
+      font-weight: 500;
+      color: #c49275;
+      padding: 8px 0 24px;
+      svg {
+        padding-right: 8px;
+      }
+    }
+    .writing_question-left {
+      width: 50%;
+      padding: 8px 16px;
+      border-right: 1px solid #8585851a;
+    }
+    .writing_question-right {
+      width: 50%;
+      padding: 8px 16px;
+      border-left: 1px solid #8585851a;
+      ul {
+        margin-left: 16px;
+      }
+      form {
+        textarea {
+          width: 100%;
+          margin-top: 24px;
+          border: 2px solid #8585851a;
+          resize: none;
+          border-radius: 4px;
+          height: 480px;
+        }
+        button {
+          width: 100%;
+          background-color: #c49275;
+          border: none;
+          color: #fff;
+          height: 40px;
+          border-radius: 4px;
+          margin-top: 8px;
+        }
+      }
+    }
+  }
+}
+
+.noUser {
+  height: 60vh;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .unLock-wall {
+    text-align: center;
+    svg {
+      width: 28px;
+      margin-bottom: 16px;
+      height: 32px;
+    }
+    h2 {
+      margin-bottom: 8px;
+    }
+    p {
+      margin-bottom: 8px;
+    }
+    button {
+      padding: 0 16px;
+      border: none;
+    }
+    .onLock-btn {
+      margin-right: 16px;
+      background-color: rgba(255, 255, 255, 0.24);
+      color: #fff;
+    }
+  }
+}
+
 @media (min-width: 576px) {
   .nav_container {
     .dashboard_nav {
@@ -495,7 +640,7 @@ a {
           }
         }
         .courseList {
-          max-width: 540px;
+          // max-width: 540px;
           margin: 0 auto;
         }
       }
@@ -507,7 +652,14 @@ a {
   .nav_container {
     .dashboard_nav {
       .dashboard_nav-content {
-        max-width: 720px;
+        padding: 0 24px;
+        .flex {
+          .logo {
+            img {
+              max-height: 56px;
+            }
+          }
+        }
       }
     }
   }
@@ -537,7 +689,7 @@ a {
   .nav_container {
     .dashboard_nav {
       .dashboard_nav-content {
-        max-width: 960px;
+        padding: 0 32px;
       }
     }
   }
@@ -552,7 +704,7 @@ a {
                 display: flex;
                 flex-wrap: wrap;
                 .courseItem {
-                  width: calc(100%/3);
+                  width: calc(100% / 3);
                   .card-item {
                     .course-item_img {
                       img {

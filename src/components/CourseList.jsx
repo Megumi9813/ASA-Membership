@@ -7,7 +7,7 @@ function CourseList({ courses }) {
       <div className="row">
         <div className="course-wrapper">
           <ul className="card-list">
-            {courses.map((course) => (
+            {courses?.map((course) => (
               <CourseItem course={course} key={course.id} />
             ))}
           </ul>
